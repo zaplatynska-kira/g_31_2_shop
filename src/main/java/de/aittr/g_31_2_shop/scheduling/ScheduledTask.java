@@ -14,14 +14,14 @@ public class ScheduledTask {
 
     private final List<String> recentTasks = new ArrayList<>();
 
-    //@Scheduled(cron = "*/30 * * * * *")
+
     @Scheduled(fixedRateString = "PT30S")
     public void scheduledTask() {
         String taskResult = performTask();
         addToRecentTasks(taskResult);
 
         if (recentTasks.size() == 5) {
-            // Выводим в консоль, когда выполнены все пять задач
+
             System.out.println("Все пять задач выполнены.");
         }
     }
