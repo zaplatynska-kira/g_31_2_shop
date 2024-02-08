@@ -9,6 +9,7 @@ import de.aittr.g_31_2_shop.exception_handling.exceptions.ProductValidationExcep
 import de.aittr.g_31_2_shop.exception_handling.exceptions.ThirdTestException;
 import de.aittr.g_31_2_shop.repositories.jpa.JpaProductRepository;
 import de.aittr.g_31_2_shop.scheduling.ScheduleExecutor;
+import de.aittr.g_31_2_shop.scheduling.ScheduledTask;
 import de.aittr.g_31_2_shop.services.interfaces.ProductService;
 import de.aittr.g_31_2_shop.services.mapping.ProductMappingService;
 import jakarta.transaction.Transactional;
@@ -52,7 +53,8 @@ private Logger logger= LoggerFactory.getLogger(JpaProductService.class);
     public List<ProductDto> getAllActiveProducts() {
 
         Task task = new Task("Method getAllActiveProducts called");
-        ScheduleExecutor.scheduleAndExecuteTask(task);
+        //ScheduleExecutor.scheduleAndExecuteTask(task);
+
 //здесь будет джоин поинт и будет внедряться дополнительный код
 
         return repository.findAll()

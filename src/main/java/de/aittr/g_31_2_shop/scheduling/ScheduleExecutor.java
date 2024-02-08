@@ -19,13 +19,13 @@ import java.time.Instant;
 @EnableScheduling
 @EnableAsync
 public class ScheduleExecutor {
-    private TaskService taskService;
+   // private TaskService taskService;
 
-    private static Logger logger= LoggerFactory.getLogger(ScheduleExecutor.class);
+   // private static Logger logger= LoggerFactory.getLogger(ScheduleExecutor.class);
 
-    public ScheduleExecutor(TaskService taskService) {
-        this.taskService = taskService;
-    }
+    //public ScheduleExecutor(TaskService taskService) {
+        //this.taskService = taskService;
+    //}
 
 
     //@Scheduled(fixedDelay = 5000)
@@ -132,17 +132,20 @@ public class ScheduleExecutor {
 
 
 
-    public  static void scheduleAndExecuteTask(Task task){
-        TaskScheduler scheduler= new DefaultManagedTaskScheduler();
-        Instant instant = Instant.now().plusSeconds(30);
-        scheduler.schedule(
+    //public  static void scheduleAndExecuteTask(Task task){
+        //TaskScheduler scheduler= new DefaultManagedTaskScheduler();
+       // Instant instant = Instant.now().plusSeconds(30);
+       // scheduler.schedule(
 
-                () ->logger.info(task.getDescription()),
-               instant
-        );
+               // () ->logger.info(task.getDescription()),
+              // instant
+       // );
 
     }
 
 
-}
+
+
+
+
 
